@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10KB Wiki</title>
+<style>:root{--bg:#fff;--b2:#f6f8fa;--b3:#e8eaed;--fg:#1a1a2e;--f2:#555;--f3:#888;--ac:#2563eb;--bd:#d1d5db;--sw:260px;--cb:#f0f0f0;--cf:#d63384}@media(prefers-color-scheme:dark){:root{--bg:#0d1117;--b2:#161b22;--b3:#21262d;--fg:#e6edf3;--f2:#b0b8c4;--f3:#6e7681;--ac:#58a6ff;--bd:#30363d;--cb:#1a1f29;--cf:#f78166}}*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);display:grid;grid-template-columns:var(--sw) 1fr;min-height:100vh;line-height:1.6}#s{background:var(--b2);border-right:1px solid var(--bd);padding:1rem;overflow-y:auto;height:100vh;position:sticky;top:0;display:flex;flex-direction:column}#s header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}#s header b{font-size:1.1rem}#sx{display:none;background:0;border:0;color:var(--fg);font-size:1.4rem;cursor:pointer}#q{width:100%;padding:.4rem .6rem;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg);font-size:.85rem;margin-bottom:.75rem;outline:0}#q:focus{border-color:var(--ac)}#t{flex:1;overflow-y:auto}#t ul{list-style:none;padding-left:1rem}#t>ul{padding-left:0}#t a{display:block;padding:.2rem .5rem;border-radius:4px;color:var(--f2);text-decoration:none;font-size:.87rem}#t a:hover{background:var(--b3);color:var(--fg)}#t a.active{background:var(--ac);color:#fff}.fl{display:flex;align-items:center;gap:.3rem;padding:.2rem .5rem;font-size:.85rem;font-weight:600;color:var(--f3);cursor:pointer;user-select:none}.fl:hover{background:var(--b3)}.fl::before{content:"\25B6";font-size:.6rem;transition:transform .2s}.fl.open::before{transform:rotate(90deg)}.fc{display:none}.fc.open{display:block}#m{padding:2rem 3rem;max-width:52rem;min-width:0}#mb{display:none;position:fixed;top:.75rem;left:.75rem;z-index:100;background:var(--b2);border:1px solid var(--bd);color:var(--fg);font-size:1.2rem;padding:.3rem .6rem;border-radius:6px;cursor:pointer}#c h1{font-size:2rem;margin:0 0 1rem;border-bottom:1px solid var(--bd);padding-bottom:.5rem}#c h2{font-size:1.5rem;margin:1.8rem 0 .7rem;border-bottom:1px solid var(--bd);padding-bottom:.3rem}#c h3{font-size:1.25rem;margin:1.5rem 0 .5rem}#c p{margin:0 0 1rem}#c a{color:var(--ac);text-decoration:none}#c a:hover{text-decoration:underline}#c code{background:var(--cb);color:var(--cf);padding:.15rem .3rem;border-radius:3px;font-size:.88em}#c pre{background:var(--cb);border-radius:6px;padding:1rem;overflow-x:auto;margin:0 0 1rem;border:1px solid var(--bd)}#c pre code{background:0;color:var(--fg);padding:0}#c blockquote{border-left:3px solid var(--ac);padding:.5rem 1rem;margin:0 0 1rem;color:var(--f3);background:var(--b2)}#c ul,#c ol{margin:0 0 1rem;padding-left:1.5rem}#c li{margin:.2rem 0}#c hr{border:0;border-top:1px solid var(--bd);margin:1.5rem 0}#c img{max-width:100%}#c table{border-collapse:collapse;width:100%;margin:0 0 1rem}#c th,#c td{border:1px solid var(--bd);padding:.4rem .6rem;text-align:left}#c th{background:var(--b2);font-weight:600}@media(max-width:768px){body{grid-template-columns:1fr}#s{position:fixed;left:-100%;top:0;width:80vw;max-width:300px;height:100vh;z-index:200;transition:left .25s}#s.open{left:0}#sx{display:block}#mb{display:block}#m{padding:2rem 1rem;padding-top:3.5rem}}</style>
+</head>
+<body>
+<aside id="s">
+<header>
+<b>10KB Wiki</b>
+<button id="sx">&times;</button>
+</header>
+<input type="text" id="q" placeholder="Filter..." autocomplete="off">
+<nav id="t"></nav>
+</aside>
+<main id="m">
+<button id="mb">&#9776;</button>
+<div id="c"></div>
+</main>
+<script id="w" type="application/json">{"tree":{"name":"10KB Wiki","children":[{"name":"Index","path":"index"},{"name":"guide","children":[{"name":"Getting Started","path":"guide/getting-started"}]}]},"pages":{"index":"# Welcome to 10KB Wiki\n\nAn ultra-lightweight wiki in a single HTML file. No server, no framework.\n\n## How it works\n\n1. Write **Markdown** files in `docs/`\n2. Run `python build.py`\n3. Open `wiki.html` — works with `file://`\n\n## Features\n\n- Zero dependencies — just Python 3 for build\n- Works offline, dark/light auto theme\n- Wiki links with `[[Page Name]]`\n- Searchable sidebar, responsive\n\nSee the [[Getting Started]] guide.\n\n## Markdown\n\n| Feature | Syntax |\n|---------|--------|\n| Headings | `# H1` to `###### H6` |\n| Bold | `**text**` |\n| Italic | `*text*` |\n| Strikethrough | `~~text~~` |\n| Code | `` `code` `` |\n| Images | `![alt](url)` |\n| Links | `[text](url)` |\n| Wiki links | `[[Page]]` |\n| Lists | `- item` or `1. item` |\n| Blockquotes | `> quote` |\n| Tables | Pipe tables |\n| Code blocks | Triple backticks |\n| Horizontal rule | `---` |\n","guide/getting-started":"# Getting Started\n\n## Setup\n\nCreate Markdown files in `docs/`:\n\n```\ndocs/\n├── index.md\n└── guide/\n    └── getting-started.md\n```\n\n## Build\n\n```bash\npython build.py\n```\n\nThis bundles everything into a single `wiki.html`.\n\n## Writing\n\nEach `.md` file becomes a page. The path determines the URL:\n\n- `docs/index.md` → `#index`\n- `docs/guide/getting-started.md` → `#guide/getting-started`\n\n### Wiki Links\n\nLink between pages with double brackets:\n\n```markdown\nSee [[Getting Started]] for more.\n```\n\n### Code Blocks\n\n```python\ndef hello():\n    print(\"Hello, lightWiki!\")\n```\n\n> **Tip:** Use the sidebar search to filter pages by name.\n\nBack to [[index]].\n"}}</script>
+<script>(function(){
+var D=JSON.parse(document.getElementById("w").textContent),P=D.pages,$=s=>document.getElementById(s),tE=$("t"),LR=/^(\s*)([-*+]|\d+\.)\s/;
+function md(s){
+var l=s.replace(/\r\n/g,"\n").split("\n"),o="",i=0,L,m;
+while(i<l.length){L=l[i];
+if(!L.trim()){i++;continue}
+m=L.match(/^```(\w*)/);
+if(m){var g=m[1],c=[];i++;while(i<l.length&&!/^```\s*$/.test(l[i]))c.push(esc(l[i++]));i++;o+="<pre><code"+(g?' class="language-'+g+'"':"")+">"+c.join("\n")+"</code></pre>";continue}
+m=L.match(/^(#{1,6})\s+(.+)/);
+if(m){o+="<h"+m[1].length+">"+inl(m[2])+"</h"+m[1].length+">";i++;continue}
+if(/^(\*{3,}|-{3,}|_{3,})\s*$/.test(L)){o+="<hr>";i++;continue}
+if(L[0]==">"){var b=[];while(i<l.length&&l[i][0]==">")b.push(l[i++].replace(/^>\s?/,""));o+="<blockquote>"+md(b.join("\n"))+"</blockquote>";continue}
+if(i+1<l.length&&L[0]=="|"&&/^\|[\s\-:|]+\|/.test(l[i+1])){
+var h=tr(L),r=[];i+=2;while(i<l.length&&l[i][0]=="|")r.push(tr(l[i++]));
+o+="<table><thead><tr>"+h.map(v=>"<th>"+inl(v)+"</th>").join("")+"</tr></thead><tbody>";
+r.forEach(v=>{o+="<tr>"+v.map(c=>"<td>"+inl(c)+"</td>").join("")+"</tr>"});o+="</tbody></table>";continue}
+if(LR.test(L)){o+=pL(l,i,n=>{i=n});continue}
+var p=[];while(i<l.length&&l[i].trim()&&!/^(#{1,6}\s|```|>\s?|\||\s*[-*+]\s|\s*\d+\.\s|(\*{3,}|-{3,}|_{3,})\s*$)/.test(l[i]))p.push(l[i++]);
+o+="<p>"+inl(p.join(" "))+"</p>";}return o;}
+function pL(l,i,cb){
+var f=l[i].match(LR),bi=f[1].length,tg=/\d/.test(f[2])?"ol":"ul",o="<"+tg+">",m;
+while(i<l.length){m=l[i].match(/^(\s*)([-*+]|\d+\.)\s+(.*)/);
+if(!m||m[1].length<bi)break;
+if(m[1].length>bi){o+=pL(l,i,n=>{i=n});continue}
+o+="<li>"+inl(m[3]);i++;
+if(i<l.length&&l[i]){var n=l[i].match(LR);if(n&&n[1].length>bi)o+=pL(l,i,n=>{i=n})}
+o+="</li>";}o+="</"+tg+">";cb(i);return o;}
+function tr(l){return l.replace(/^\|/,"").replace(/\|$/,"").split("|").map(c=>c.trim())}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function inl(s){s=esc(s);
+s=s.replace(/`([^`]+)`/g,"<code>$1</code>");
+s=s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g,'<img src="$2" alt="$1">');
+s=s.replace(/\[\[([^\]]+)\]\]/g,(_,n)=>'<a href="#'+n.toLowerCase().replace(/\s+/g,"-")+'">'+n+"</a>");
+s=s.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2">$1</a>');
+s=s.replace(/\*\*\*(.+?)\*\*\*/g,"<strong><em>$1</em></strong>");
+s=s.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>");
+s=s.replace(/__(.+?)__/g,"<strong>$1</strong>");
+s=s.replace(/\*(.+?)\*/g,"<em>$1</em>");
+s=s.replace(/_(.+?)_/g,"<em>$1</em>");
+s=s.replace(/~~(.+?)~~/g,"<del>$1</del>");return s;}
+function bT(n){var h="";(n.children||[]).forEach(c=>{
+if(c.children)h+='<li><span class="fl open" onclick="this.classList.toggle(\'open\');this.nextElementSibling.classList.toggle(\'open\')">'+c.name+'</span><ul class="fc open">'+bT(c)+"</ul></li>";
+else h+='<li><a href="#'+c.path+'" data-p="'+c.path+'">'+c.name+"</a></li>"});return h;}
+tE.innerHTML="<ul>"+bT(D.tree)+"</ul>";
+var gp=()=>decodeURIComponent(location.hash.replace(/^#/,"")||"index");
+function render(){var p=gp(),s=P[p]||P[p.replace(/\.md$/,"")]||P[p+".md"];
+if(!s){$("c").innerHTML="<h1>Not found</h1><p><code>"+esc(p)+"</code></p>";hl(p);return}
+$("c").innerHTML=md(s);hl(p);scrollTo(0,0);$("s").classList.remove("open");}
+function hl(p){var a=tE.querySelectorAll("a"),j=a.length;while(j--)a[j].classList.toggle("active",a[j].dataset.p===p)}
+$("q").oninput=function(){
+var q=this.value.toLowerCase(),a=tE.querySelectorAll("a"),j=a.length;
+while(j--)a[j].parentNode.style.display=a[j].textContent.toLowerCase().indexOf(q)>=0?"":"none";
+var f=tE.querySelectorAll(".fc"),k=f.length;
+while(k--){var v=f[k].querySelector("li:not([style*='display: none'])");
+f[k].parentNode.style.display=v?"":"none";
+if(q&&v){f[k].classList.add("open");f[k].previousElementSibling.classList.add("open")}}};
+$("mb").onclick=()=>$("s").classList.add("open");
+$("sx").onclick=()=>$("s").classList.remove("open");
+onhashchange=render;render();
+})();</script>
+</body>
+</html>
